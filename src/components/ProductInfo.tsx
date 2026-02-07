@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Star, Minus, Plus, ShieldCheck, Truck, BadgeCheck } from "lucide-react";
+import { Star, Minus, Plus, ShieldCheck, Truck, BadgeCheck, ChevronRight } from "lucide-react";
 import { sizeOptions, type SizeOption } from "@/lib/productData";
 
 const ProductInfo = () => {
@@ -58,30 +58,32 @@ const ProductInfo = () => {
       </div>
 
       {/* Rating */}
-      <div className="flex items-center gap-2">
-        <div className="flex items-center gap-0.5 star-rating">
-          {[1, 2, 3, 4, 5].map((s) => (
-            <Star
-              key={s}
-              className="w-4 h-4"
-              fill={s <= 4.8 ? "currentColor" : "none"}
-            />
-          ))}
+      <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-0.5 star-rating">
+            {[1, 2, 3, 4, 5].map((s) => (
+              <Star
+                key={s}
+                className="w-4 h-4"
+                fill={s <= 4.8 ? "currentColor" : "none"}
+              />
+            ))}
+          </div>
+          <span className="text-sm font-medium">4.8</span>
+          <span className="text-sm text-muted-foreground">127 reviews</span>
         </div>
-        <span className="text-sm font-medium">4.8</span>
-        <a
-          href="#reviews"
-          onClick={(e) => {
-            e.preventDefault();
+        <button
+          onClick={() => {
             const element = document.getElementById("reviews");
             if (element) {
               element.scrollIntoView({ behavior: "smooth" });
             }
           }}
-          className="text-sm text-primary hover:underline font-medium cursor-pointer transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 transition-opacity shadow-sm"
         >
-          127 reviews
-        </a>
+          <span>View Reviews</span>
+          <ChevronRight className="w-4 h-4" />
+        </button>
       </div>
 
       {/* Package Info */}
