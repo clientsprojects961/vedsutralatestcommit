@@ -63,9 +63,21 @@ const Index = () => {
               </p>
             </div>
           </div>
-          <div className="border-t pt-6 text-center">
+          <div className="border-t pt-6 text-center space-y-2">
             <p className="text-sm text-muted-foreground">
               © 2026 Vedsutra. All rights reserved.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Created by{" "}
+              <a
+                href="https://wa.me/919473315961"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-medium transition-colors"
+              >
+                Adarsh Sinha
+              </a>
+              {" "}(+91 9473315961)
             </p>
           </div>
         </div>
