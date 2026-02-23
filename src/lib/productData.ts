@@ -21,7 +21,7 @@ export type SizeOption = {
 };
 
 export const sizeOptions: SizeOption[] = [
-  { label: "1 Pack (30 Patches)", price: 599, originalPrice: 1499 },
+  { label: "1 Pack (30 Patches)", price: 899, originalPrice: 1499 },
 ];
 
 export const reviews = [
